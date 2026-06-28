@@ -10,6 +10,7 @@
 	--color-cream-dark: #f1e9df;
 	--color-espresso: #2a1e18;
 	--color-terracotta: #c45b3c;
+	--color-terracotta-text: #a8472b; /* AA-contrast variant for text on light bg */
 	--color-sand: #e7ddd0;
 }
 
