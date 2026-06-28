@@ -1,0 +1,70 @@
+---
+import { Image } from 'astro:assets';
+import heroImage from '../assets/images/hero.jpg';
+---
+
+<section id="top" class="relative overflow-hidden">
+	<div
+		class="mx-auto grid max-w-6xl items-center gap-12 px-6 py-20 md:grid-cols-2 md:py-28 lg:gap-16"
+	>
+		<div class="max-w-xl">
+			<p
+				class="mb-5 inline-flex items-center gap-2 rounded-full bg-sand/60 px-4 py-1.5 text-sm font-medium text-espresso/70"
+			>
+				<span class="h-2 w-2 rounded-full bg-terracotta"></span>
+				Specialty roasters · est. 2019
+			</p>
+
+			<h1
+				class="font-display text-5xl font-semibold leading-[1.05] tracking-tight text-espresso sm:text-6xl lg:text-7xl"
+			>
+				Small-batch coffee, roasted on the corner.
+			</h1>
+
+			<p class="mt-6 max-w-md text-lg leading-relaxed text-espresso/80">
+				Roan Coffee Roasters sources, roasts, and brews in small batches —
+				so every cup tastes like it was made just for you. Pull up a chair.
+			</p>
+
+			<div class="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+				<a
+					href="#order"
+					class="rounded-full bg-terracotta px-7 py-3.5 text-center text-base font-semibold text-cream transition-colors hover:bg-terracotta/90"
+				>
+					Order Online
+				</a>
+				<a
+					href="#menu"
+					class="rounded-full border border-espresso/20 px-7 py-3.5 text-center text-base font-semibold text-espresso transition-colors hover:bg-cream-dark"
+				>
+					See the menu
+				</a>
+			</div>
+		</div>
+
+		<div class="relative">
+			<div
+				class="aspect-[4/5] overflow-hidden rounded-3xl bg-cream-dark shadow-xl ring-1 ring-espresso/5"
+			>
+				<Image
+					src={heroImage}
+					alt="The warm, wood-counter interior of Roan Coffee Roasters with a fresh pour on the bar"
+					width={1200}
+					widths={[600, 900, 1200]}
+					sizes="(min-width: 768px) 45vw, 90vw"
+					format="webp"
+					quality={80}
+					class="h-full w-full object-cover"
+					loading="eager"
+					fetchpriority="high"
+				/>
+			</div>
+			<!-- decorative glow -->
+			<div
+				class="absolute -right-6 -top-6 -z-10 h-40 w-40 rounded-full bg-terracotta/15 blur-2xl"
+				aria-hidden="true"
+			>
+			</div>
+		</div>
+	</div>
+</section>

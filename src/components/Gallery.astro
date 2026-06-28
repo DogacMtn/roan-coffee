@@ -1,0 +1,101 @@
+---
+import { Image } from 'astro:assets';
+import g1 from '../assets/images/gallery-1.jpg';
+import g2 from '../assets/images/gallery-2.jpg';
+import g3 from '../assets/images/gallery-3.jpg';
+import g4 from '../assets/images/gallery-4.jpg';
+import g5 from '../assets/images/gallery-5.jpg';
+import g6 from '../assets/images/gallery-6.jpg';
+
+// featured tile spans wider/taller in the grid below
+const tiles = [
+	{ img: g1, alt: 'The espresso bar at Roan mid-service, with a barista pulling shots', featured: true },
+	{ img: g2, alt: 'Freshly roasted coffee beans cooling in the roaster’s tray' },
+	{ img: g3, alt: 'A slow pour-over being brewed by hand at the Roan brew station' },
+	{ img: g4, alt: 'Roan’s corner storefront catching the morning light' },
+	{ img: g5, alt: 'Latte art swirled into a Roan honey oat latte' },
+	{ img: g6, alt: 'The drum roaster at work inside the Roan roastery' },
+];
+
+const featuredSizes = '(min-width: 1024px) 58vw, (min-width: 768px) 100vw, 90vw';
+const tileSizes = '(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 90vw';
+const tileClass =
+	'h-full w-full object-cover transition-transform duration-500 group-hover:scale-105';
+---
+
+<section id="gallery" class="bg-cream-dark">
+	<div class="mx-auto max-w-6xl px-6 py-20 md:py-28">
+		<div class="max-w-2xl">
+			<p class="text-sm font-semibold uppercase tracking-[0.2em] text-terracotta">
+				In The Room
+			</p>
+			<h2
+				class="mt-4 font-display text-4xl font-semibold leading-tight tracking-tight text-espresso sm:text-5xl"
+			>
+				A morning behind the bar.
+			</h2>
+			<p class="mt-5 text-lg leading-relaxed text-espresso/80">
+				Steam, light, and a little flour-dust of crema — here’s what a day at
+				Roan actually looks like.
+			</p>
+		</div>
+
+		<!-- editorial grid: 6-col on tablet, asymmetric 12-col on desktop -->
+		<div class="mt-12 hidden auto-rows-[180px] gap-4 md:grid md:grid-cols-6 lg:grid-cols-12">
+			<figure
+				class="group relative overflow-hidden rounded-xl bg-cream md:col-span-6 md:row-span-2 lg:col-span-7 lg:row-span-2"
+			>
+				<Image
+					src={tiles[0].img}
+					alt={tiles[0].alt}
+					width={1500}
+					widths={[700, 1100, 1500]}
+					sizes={featuredSizes}
+					format="webp"
+					quality={80}
+					loading="lazy"
+					class={tileClass}
+				/>
+			</figure>
+
+			<figure class="group relative overflow-hidden rounded-xl bg-cream md:col-span-3 lg:col-span-5">
+				<Image src={tiles[1].img} alt={tiles[1].alt} width={1000} widths={[400, 700, 1000]} sizes={tileSizes} format="webp" quality={80} loading="lazy" class={tileClass} />
+			</figure>
+			<figure class="group relative overflow-hidden rounded-xl bg-cream md:col-span-3 lg:col-span-5">
+				<Image src={tiles[2].img} alt={tiles[2].alt} width={1000} widths={[400, 700, 1000]} sizes={tileSizes} format="webp" quality={80} loading="lazy" class={tileClass} />
+			</figure>
+
+			<figure class="group relative overflow-hidden rounded-xl bg-cream md:col-span-3 lg:col-span-4">
+				<Image src={tiles[3].img} alt={tiles[3].alt} width={1000} widths={[400, 700, 1000]} sizes={tileSizes} format="webp" quality={80} loading="lazy" class={tileClass} />
+			</figure>
+			<figure class="group relative overflow-hidden rounded-xl bg-cream md:col-span-3 lg:col-span-4">
+				<Image src={tiles[4].img} alt={tiles[4].alt} width={1000} widths={[400, 700, 1000]} sizes={tileSizes} format="webp" quality={80} loading="lazy" class={tileClass} />
+			</figure>
+			<figure class="group relative overflow-hidden rounded-xl bg-cream md:col-span-6 lg:col-span-4">
+				<Image src={tiles[5].img} alt={tiles[5].alt} width={1000} widths={[400, 700, 1000]} sizes={tileSizes} format="webp" quality={80} loading="lazy" class={tileClass} />
+			</figure>
+		</div>
+
+		<!-- mobile: horizontal scroll strip -->
+		<div
+			class="-mx-6 mt-10 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-2 md:hidden"
+		>
+			{
+				tiles.map((tile) => (
+					<figure class="group relative aspect-[4/3] w-64 shrink-0 snap-start overflow-hidden rounded-xl bg-cream">
+						<Image
+							src={tile.img}
+							alt={tile.alt}
+							width={512}
+							sizes="256px"
+							format="webp"
+							quality={80}
+							loading="lazy"
+							class={tileClass}
+						/>
+					</figure>
+				))
+			}
+		</div>
+	</div>
+</section>

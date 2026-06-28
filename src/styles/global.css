@@ -1,0 +1,20 @@
+@import "tailwindcss";
+
+@theme {
+	/* Type */
+	--font-display: "Fraunces Variable", serif;
+	--font-body: "Inter Variable", sans-serif;
+
+	/* Brand palette */
+	--color-cream: #faf6f0;
+	--color-cream-dark: #f1e9df;
+	--color-espresso: #2a1e18;
+	--color-terracotta: #c45b3c;
+	--color-sand: #e7ddd0;
+}
+
+body {
+	font-family: var(--font-body);
+	background-color: var(--color-cream);
+	color: var(--color-espresso);
+}
