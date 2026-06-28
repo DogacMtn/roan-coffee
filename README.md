@@ -1,43 +1,32 @@
-# Astro Starter Kit: Minimal
+# Roan Coffee Roasters
+
+A performance-focused single-page landing site built for a fictional specialty coffee roaster.
+
+## Tech stack
+
+- [Astro](https://astro.build) (static output)
+- [Tailwind CSS v4](https://tailwindcss.com)
+- Optimized images via `astro:assets`
+- Self-hosted fonts (Fraunces + Inter)
+
+## Features
+
+- Responsive across mobile, tablet, and desktop
+- Accessible, semantic markup
+- SEO meta tags + Open Graph
+- Near-zero client-side JavaScript
+- Optimized WebP imagery with responsive `srcset`
+
+## Development
 
 ```sh
-npm create astro@latest -- --template minimal
+npm install      # install dependencies
+npm run dev      # start the dev server at http://localhost:4321
+npm run build    # build the production site to ./dist/
+npm run preview  # preview the production build locally
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Notes
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Photography is sourced from Unsplash/Pexels under their free license. See [image-credits.md](./image-credits.md).
+- Map, social, and online-ordering links are demo placeholders and are not wired to live destinations.
